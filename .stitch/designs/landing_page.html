@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UniNest – PG Finder</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#f7f9fb",
+              "surface-tint": "#494bd6",
+              "on-tertiary-fixed-variant": "#703700",
+              "outline-variant": "#c7c4d7",
+              "background": "#f7f9fb",
+              "on-secondary-fixed-variant": "#005048",
+              "inverse-primary": "#c0c1ff",
+              "surface-container": "#eceef0",
+              "on-error-container": "#93000a",
+              "primary-fixed": "#e1e0ff",
+              "primary": "#4648d4",
+              "surface-dim": "#d8dadc",
+              "tertiary-fixed": "#ffdcc5",
+              "on-tertiary-container": "#fffbff",
+              "on-tertiary-fixed": "#301400",
+              "tertiary-fixed-dim": "#ffb783",
+              "secondary-fixed": "#71f8e4",
+              "error": "#ba1a1a",
+              "on-secondary-container": "#006f64",
+              "tertiary-container": "#b55d00",
+              "surface": "#f7f9fb",
+              "surface-variant": "#e0e3e5",
+              "surface-container-low": "#f2f4f6",
+              "on-background": "#191c1e",
+              "tertiary": "#904900",
+              "surface-container-highest": "#e0e3e5",
+              "inverse-surface": "#2d3133",
+              "surface-container-high": "#e6e8ea",
+              "on-error": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#c0c1ff",
+              "outline": "#767586",
+              "on-surface": "#191c1e",
+              "on-primary-fixed": "#07006c",
+              "on-primary-container": "#fffbff",
+              "primary-container": "#6063ee",
+              "secondary-fixed-dim": "#4fdbc8",
+              "secondary": "#006b5f",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#6df5e1",
+              "on-surface-variant": "#464554",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "on-secondary-fixed": "#00201c",
+              "inverse-on-surface": "#eff1f3",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: radial-gradient(circle at top left, #e1e0ff 0%, #f7f9fb 40%, #e6fcf9 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-sm shadow-indigo-500/5">
+<nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400 text-3xl" data-icon="school">school</span>
+<span class="text-2xl font-bold tracking-tight text-indigo-600 dark:text-indigo-400 font-headline">UniNest</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-medium text-slate-600 dark:text-slate-400">
+<a class="text-indigo-700 dark:text-indigo-300 font-semibold hover:text-indigo-500 transition-colors" href="#">Explore</a>
+<a class="hover:text-indigo-500 transition-colors" href="#">Universities</a>
+<a class="hover:text-indigo-500 transition-colors" href="#">List Property</a>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-indigo-500/20 active:scale-95 transition-transform">Sign In</button>
+</div>
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden p-2 text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</nav>
+</header>
+<main class="pt-24 min-h-screen flex flex-col items-center">
+<!-- Hero Section -->
+<section class="w-full max-w-7xl px-6 py-16 md:py-24 text-center">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 to-indigo-500">
+                Welcome to UniNest
+            </h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
+                Find your perfect space or list your property. The premium student housing network designed for your academic journey.
+            </p>
+<!-- Role Selector Cards -->
+<div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<!-- Student Card -->
+<div class="glass-card p-10 rounded-lg text-left group hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 cursor-pointer flex flex-col justify-between h-full">
+<div>
+<div class="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+<span class="text-4xl">👨‍🎓</span>
+</div>
+<h2 class="font-headline text-3xl font-bold text-indigo-900 mb-4">Student</h2>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8">
+                            Find the perfect PG near your university. Browse verified listings with amenities designed for study and rest.
+                        </p>
+</div>
+<div class="flex items-center gap-2 text-indigo-600 font-bold group-hover:gap-4 transition-all">
+<span>Start Browsing</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Owner Card -->
+<div class="glass-card p-10 rounded-lg text-left group hover:shadow-2xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer flex flex-col justify-between h-full">
+<div>
+<div class="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+<span class="text-4xl">🏠</span>
+</div>
+<h2 class="font-headline text-3xl font-bold text-secondary mb-4">PG Owner</h2>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8">
+                            List your PG and find verified students. Manage your bookings and tenants with our ethereal academic toolkit.
+                        </p>
+</div>
+<div class="flex items-center gap-2 text-secondary font-bold group-hover:gap-4 transition-all">
+<span>List Your Space</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Section (Bento Grid) -->
+<section class="w-full max-w-7xl px-6 py-20">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Major Bento Item -->
+<div class="md:col-span-8 relative overflow-hidden rounded-lg group">
+<img alt="Premium Student Room" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern spacious student apartment with large window soft daylight desk setup and cozy bed in minimalist style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo2OVDWOv2WqcqlTcFgrXyxXsZbJqp_lz8VsnmPgMw8wzV-PomMC3jIkX3-I-jAKu3iZlw5kNy7ZQIsZmwuUtyjxJwk7gjOX2LJfr2nO1srIBGJ1weh1aaKDScvu14_z4Y2befzLeU4e3R9uPe1gSmob3-eBH8Vye_4EzguVmnVbBkDAqztozAm6TW2RWxoAU224hhMBiweSFq5IsoW8XBW3dzgBlt83TeAmSfGF97k546ScHCbBLnCs_zEnfqG0gpGi_1b80pmh8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<span class="bg-primary/90 px-4 py-1 rounded-full text-xs font-bold mb-4 inline-block">PREMIUM LISTINGS</span>
+<h3 class="text-4xl font-headline font-bold">Curated for Excellence</h3>
+</div>
+</div>
+<!-- Small Bento Item 1 -->
+<div class="md:col-span-4 bg-white/50 backdrop-blur-md rounded-lg p-8 flex flex-col justify-center border border-white/30">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6" data-icon="verified_user">verified_user</span>
+<h3 class="font-headline text-2xl font-bold mb-3">100% Verified</h3>
+<p class="text-on-surface-variant leading-relaxed">Every property and student profile undergoes a rigorous verification process for your peace of mind.</p>
+</div>
+<!-- Small Bento Item 2 -->
+<div class="md:col-span-4 bg-indigo-600 rounded-lg p-8 flex flex-col justify-center text-white">
+<h3 class="font-headline text-4xl font-extrabold mb-2">Thousands</h3>
+<p class="text-indigo-100">Students find their perfect space through UniNest across major campus cities.</p>
+</div>
+<!-- Small Bento Item 3 -->
+<div class="md:col-span-8 relative overflow-hidden rounded-lg group">
+<img alt="Community Space" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Students collaborating in a vibrant modern communal study area with plants and high-end furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmlJ_YLe7hACX6YiW1XUlrkEx8vsBNKK-OaBYyVPUfjGyQ9BwVyP1SvB_SQE1JK-rsAME3QM9moNfexOztEmU6oA7oaLkeazhAf5dJCM-gItjlQgurT6TuytJWlJF8_aeumdK3puMKyBdvYvXoMOvr5xzCxtLNe3SazjnWydWEBC-ydDTYeSg73JrK1s4qkbkf1Lx2myA-pi-8FwIvjRmObsu-iOebL-bHuwoOOhkziQVhDLQRgqpue1l3Hkl-JrC3UPGAKZ9JHYY"/>
+<div class="absolute inset-0 bg-gradient-to-r from-teal-900/60 to-transparent"></div>
+<div class="absolute top-8 left-8 text-white max-w-xs">
+<h3 class="text-2xl font-headline font-bold mb-2">Build Your Community</h3>
+<p class="text-sm opacity-90">Discover verified PGs and rental spaces near your university with ease.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="w-full max-w-5xl px-6 py-20 mb-20 text-center glass-card rounded-xl">
+<h2 class="font-headline text-3xl font-bold mb-4">Never miss the perfect space.</h2>
+<p class="text-on-surface-variant mb-8 max-w-md mx-auto">Join our notification list to get alerts when new properties matching your preferences are listed.</p>
+<div class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+<input class="flex-grow rounded-full bg-surface-container-highest/40 border-none focus:ring-2 focus:ring-primary px-6 py-3 font-body" placeholder="Enter your university email" type="email"/>
+<button class="bg-primary text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-primary/30 transition-shadow">Subscribe</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-12 px-8 mt-16">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-indigo-600" data-icon="school">school</span>
+<span class="font-bold text-indigo-600 text-xl font-headline">UniNest</span>
+</div>
+<p class="text-slate-500 text-sm font-body max-w-xs text-center md:text-left">
+                    The Ethereal Academic Housing Network. Bridging the gap between comfort and education.
+                </p>
+</div>
+<div class="flex gap-8 text-sm font-medium text-slate-500">
+<a class="hover:text-indigo-400 transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="hover:text-indigo-400 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="hover:text-indigo-400 transition-colors opacity-80 hover:opacity-100" href="#">Contact Support</a>
+</div>
+<p class="text-slate-400 text-sm font-body">
+                © 2024 UniNest – The Ethereal Academic. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

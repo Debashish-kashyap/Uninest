@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UniNest Owner Dashboard</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#00201c",
+              "error": "#ba1a1a",
+              "tertiary-fixed-dim": "#bdc2ff",
+              "on-surface-variant": "#464554",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#006b5f",
+              "primary": "#4648d4",
+              "on-primary-fixed": "#07006c",
+              "tertiary-container": "#606ad4",
+              "on-tertiary-fixed-variant": "#2f3aa3",
+              "on-error": "#ffffff",
+              "on-background": "#191c1e",
+              "on-secondary-fixed-variant": "#005048",
+              "error-container": "#ffdad6",
+              "tertiary-fixed": "#e0e0ff",
+              "surface-dim": "#d8dadc",
+              "secondary-fixed-dim": "#4fdbc8",
+              "on-tertiary": "#ffffff",
+              "surface-variant": "#e0e3e5",
+              "primary-fixed": "#e1e0ff",
+              "surface": "#f7f9fb",
+              "outline": "#767586",
+              "inverse-primary": "#c0c1ff",
+              "on-surface": "#191c1e",
+              "inverse-surface": "#2d3133",
+              "on-tertiary-container": "#fffbff",
+              "surface-container-highest": "#e0e3e5",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#000767",
+              "on-secondary-container": "#006f64",
+              "on-error-container": "#93000a",
+              "surface-tint": "#494bd6",
+              "outline-variant": "#c7c4d7",
+              "surface-container-high": "#e6e8ea",
+              "inverse-on-surface": "#eff1f3",
+              "primary-container": "#6063ee",
+              "surface-container-low": "#f2f4f6",
+              "surface-bright": "#f7f9fb",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "on-primary": "#ffffff",
+              "background": "#f7f9fb",
+              "secondary-container": "#6df5e1",
+              "primary-fixed-dim": "#c0c1ff",
+              "tertiary": "#4651b9",
+              "surface-container": "#eceef0",
+              "secondary-fixed": "#71f8e4",
+              "on-primary-container": "#fffbff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .signature-gradient {
+        background: linear-gradient(135deg, #6366F1 0%, #14B8A6 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen text-on-surface bg-background">
+<!-- TopAppBar -->
+<header class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-white/40 dark:border-slate-800/40 shadow-[0_10px_40px_rgba(70,72,212,0.06)] flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500">menu</span>
+<div class="flex flex-col">
+<span class="text-xl font-bold bg-gradient-to-r from-indigo-500 to-teal-500 bg-clip-text text-transparent">UniNest</span>
+<span class="font-plus-jakarta tracking-tight font-semibold text-indigo-600 dark:text-indigo-400 text-sm">Owner Dashboard</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden md:block text-right">
+<p class="text-sm font-bold text-on-surface">UniNest Admin</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Premium Partner</p>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5 overflow-hidden">
+<img alt="Owner Portrait" class="w-full h-full object-cover rounded-full" data-alt="professional portrait of a confident property owner in a modern office setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_MIaY0P8_6rEswpEazE5AQbnr-AHCLGvlvJR4jW63JkglBPwkDu5LS5xhzJ-nwuSwbRBU3saqO3UrTHm1pQwZ_ULAR06YoSlLcNNalXITFbFC3wsYf20K99LDGXXwhHkjZEj6l2fjSM79XXaZEUmv3ZboMTWKnIdIrRkvx7Z9qTWEueuApOFfLfAfEp6YywIi1_t12DkWUfLVTgRBj1bE6DJt420tRciif69_LjJssQ_AjdtxLeZjZlMHNq3br1K7yd_MupmOa_k"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-10 mb-24 md:mb-10">
+<!-- Hero Action Area -->
+<section class="mb-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-on-surface mb-2">Welcome back, Partner</h1>
+<p class="text-on-surface-variant max-w-lg">Manage your property ecosystem with ethereal clarity. Add, edit, and monitor your PG listings in real-time.</p>
+</div>
+<div class="glass-card p-4 rounded-xl flex items-center">
+<button class="signature-gradient text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-primary/20 flex items-center gap-2 active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined">add</span>
+                    Add New PG
+                </button>
+</div>
+</section>
+<!-- Main Content Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left Section: Property List (7 Cols) -->
+<div class="lg:col-span-7 space-y-8">
+<div class="flex flex-col gap-4 px-2">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">list_alt</span>
+                        Active Listings
+                    </h2>
+<span id="pg-count-badge" class="bg-secondary-fixed text-on-secondary-fixed px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">0 Properties</span>
+</div>
+<div class="flex gap-4 items-center flex-wrap">
+<select id="filter-price" class="bg-surface-container-lowest border-none rounded-full px-4 py-2 text-sm shadow-sm focus:ring-primary/20">
+<option value="">Sort by Rent</option>
+<option value="low-high">Low to High</option>
+<option value="high-low">High to Low</option>
+</select>
+<select id="filter-availability" class="bg-surface-container-lowest border-none rounded-full px-4 py-2 text-sm shadow-sm focus:ring-primary/20">
+<option value="">Filter Availability</option>
+<option value="Available">Available</option>
+<option value="Occupied">Occupied</option>
+</select>
+</div>
+</div>
+<div id="pg-list" class="space-y-6 mt-6">
+</div>
+</div>
+<!-- Right Section: Add PG Form (5 Cols) -->
+<div class="lg:col-span-5">
+<div class="sticky top-28">
+<div class="glass-card rounded-lg p-8 shadow-2xl shadow-indigo-500/10">
+<div class="mb-8">
+<h2 class="text-2xl font-bold text-on-surface mb-2">Add New Property</h2>
+<p class="text-on-surface-variant text-sm">Complete the details below to publish a new listing.</p>
+</div>
+<form id="add-pg-form" class="space-y-6 flex flex-col items-start w-full">
+<div class="space-y-4 w-full">
+<label class="block">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface ml-4 mb-1 block">PG Name</span>
+<input id="pg-name" required class="w-full bg-surface-container-lowest border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline/50 shadow-sm" placeholder="e.g. Royal Orchid PG" type="text"/>
+</label>
+<label class="block">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface ml-4 mb-1 block">Location</span>
+<input id="pg-location" required class="w-full bg-surface-container-lowest border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline/50 shadow-sm" placeholder="Area, City" type="text"/>
+</label>
+<div class="grid grid-cols-2 gap-4">
+<label class="block">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface ml-4 mb-1 block">Price / Month</span>
+<input id="pg-price" required class="w-full bg-surface-container-lowest border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline/50 shadow-sm" placeholder="₹" type="number"/>
+</label>
+<label class="block">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface ml-4 mb-1 block">Availability</span>
+<select id="pg-availability" required class="w-full bg-surface-container-lowest border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-primary/20 text-on-surface shadow-sm appearance-none">
+    <option value="Available">Available</option>
+    <option value="Occupied">Occupied</option>
+</select>
+</label>
+</div>
+</div>
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface ml-4 mb-3 block">Amenities</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-bold cursor-pointer hover:bg-primary hover:text-white transition-colors">Wi-Fi</span>
+<span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-bold cursor-pointer hover:bg-primary hover:text-white transition-colors">AC</span>
+<span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-bold cursor-pointer hover:bg-primary hover:text-white transition-colors">Food</span>
+<span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-bold cursor-pointer hover:bg-primary hover:text-white transition-colors">Gym</span>
+<span class="px-4 py-2 bg-slate-200 text-slate-500 rounded-full text-xs font-bold flex items-center gap-1 cursor-pointer">
+<span class="material-symbols-outlined text-xs">add</span> Custom
+                                    </span>
+</div>
+</div>
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface ml-4 mb-3 block">Upload Photos</span>
+<div class="border-2 border-dashed border-outline-variant/50 rounded-lg p-10 flex flex-col items-center justify-center bg-surface-container-low/30 hover:bg-primary/5 transition-colors group cursor-pointer">
+<span class="material-symbols-outlined text-outline group-hover:text-primary mb-2 text-3xl font-light">cloud_upload</span>
+<p class="text-sm text-on-surface-variant">Drop images here or click to browse</p>
+<p class="text-[10px] text-outline mt-1 uppercase font-bold tracking-widest">Supports JPG, PNG up to 5MB</p>
+</div>
+</div>
+<button class="w-full signature-gradient text-white py-5 rounded-full font-black text-lg shadow-xl shadow-primary/30 active:scale-95 transition-all duration-300 mt-4" type="submit">
+                                Publish Listing
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Shell (Bottom Nav for Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/60 dark:bg-slate-900/60 backdrop-blur-2xl border-t border-white/20 shadow-[0_-5px_25px_rgba(0,0,0,0.05)] rounded-t-[32px]">
+<a class="flex flex-col items-center justify-center bg-indigo-50 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 rounded-full px-5 py-2" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[11px] font-medium font-plus-jakarta mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-indigo-500 transition-transform duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">home_work</span>
+<span class="text-[11px] font-medium font-plus-jakarta mt-1">My PGs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-indigo-500 transition-transform duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="text-[11px] font-medium font-plus-jakarta mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-indigo-500 transition-transform duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[11px] font-medium font-plus-jakarta mt-1">Settings</span>
+</a>
+</nav>
+<!-- Desktop Sidebar Overlay (Drawer Hidden by Default for focus) -->
+<div class="hidden">
+<aside class="fixed left-0 top-0 h-full z-[60] py-8 flex flex-col h-full w-72 rounded-r-[40px] bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-lg shadow-2xl shadow-indigo-500/10">
+<div class="px-8 mb-10">
+<span class="text-2xl font-black text-indigo-600">UniNest</span>
+</div>
+<div class="px-4 space-y-2">
+<div class="bg-gradient-to-r from-indigo-500 to-teal-500 text-white rounded-full mx-2 px-6 py-4 flex items-center gap-4 shadow-lg shadow-indigo-500/20">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-plus-jakarta text-sm">Overview</span>
+</div>
+<div class="text-slate-600 dark:text-slate-400 hover:bg-white/50 mx-2 px-6 py-4 rounded-full flex items-center gap-4 transition-transform hover:translate-x-1">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="font-plus-jakarta text-sm">Property List</span>
+</div>
+<div class="text-slate-600 dark:text-slate-400 hover:bg-white/50 mx-2 px-6 py-4 rounded-full flex items-center gap-4 transition-transform hover:translate-x-1">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-plus-jakarta text-sm">Revenue</span>
+</div>
+<div class="text-slate-600 dark:text-slate-400 hover:bg-white/50 mx-2 px-6 py-4 rounded-full flex items-center gap-4 transition-transform hover:translate-x-1">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-plus-jakarta text-sm">Analytics</span>
+</div>
+<div class="text-slate-600 dark:text-slate-400 hover:bg-white/50 mx-2 px-6 py-4 rounded-full flex items-center gap-4 transition-transform hover:translate-x-1">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-plus-jakarta text-sm">Support</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<script>
+    let pgListings = [
+        {
+            id: 1,
+            name: "Skyline Luxury PG",
+            location: "Indiranagar, Bangalore",
+            price: 12500,
+            availability: "Available"
+        },
+        {
+            id: 2,
+            name: "The Hive Community",
+            location: "Koramangala, Bangalore",
+            price: 9800,
+            availability: "Occupied"
+        },
+        {
+            id: 3,
+            name: "Green Terrace Stays",
+            location: "HSR Layout, Bangalore",
+            price: 15000,
+            availability: "Available"
+        }
+    ];
+
+    const pgListContainer = document.getElementById('pg-list');
+    const pgCountBadge = document.getElementById('pg-count-badge');
+    const addPgForm = document.getElementById('add-pg-form');
+    const filterPrice = document.getElementById('filter-price');
+    const filterAvailability = document.getElementById('filter-availability');
+
+    function renderListings() {
+        let filtered = [...pgListings];
+        
+        const availabilityVal = filterAvailability.value;
+        if (availabilityVal) {
+            filtered = filtered.filter(pg => pg.availability === availabilityVal);
+        }
+
+        const priceVal = filterPrice.value;
+        if (priceVal === 'low-high') {
+            filtered.sort((a, b) => a.price - b.price);
+        } else if (priceVal === 'high-low') {
+            filtered.sort((a, b) => b.price - a.price);
+        }
+
+        pgCountBadge.textContent = `${filtered.length} Properties`;
+        pgListContainer.innerHTML = '';
+        
+        filtered.forEach(pg => {
+            const availabilityClass = pg.availability === 'Available' 
+                ? 'bg-secondary-container text-on-secondary-container' 
+                : 'bg-error-container text-on-error-container';
+            
+            const cardHTML = `
+            <div class="glass-card rounded-lg overflow-hidden group hover:translate-x-1 transition-transform duration-300">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-32 h-32 md:h-auto overflow-hidden bg-primary/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-4xl text-primary/40">apartment</span>
+                    </div>
+                    <div class="flex-1 p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-bold text-on-surface">${pg.name}</h3>
+                                <span class="${availabilityClass} px-3 py-1 rounded-full text-[10px] font-black tracking-tighter uppercase">${pg.availability}</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-on-surface-variant text-sm mb-4">
+                                <span class="material-symbols-outlined text-base">location_on</span>
+                                ${pg.location}
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mt-4">
+                            <div class="text-primary font-bold text-lg">₹${pg.price}<span class="text-xs text-on-surface-variant font-medium">/mo</span></div>
+                            <div class="flex gap-2">
+                                <button onclick="deleteListing(${pg.id})" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-error hover:bg-error-container transition-colors">
+                                    <span class="material-symbols-outlined text-sm">delete</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+            pgListContainer.innerHTML += cardHTML;
+        });
+    }
+
+    // Expose globally for onclick inside innerHTML
+    window.deleteListing = function(id) {
+        pgListings = pgListings.filter(pg => pg.id !== id);
+        renderListings();
+    };
+
+    addPgForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const newPg = {
+            id: Date.now(),
+            name: document.getElementById('pg-name').value,
+            location: document.getElementById('pg-location').value,
+            price: Number(document.getElementById('pg-price').value),
+            availability: document.getElementById('pg-availability').value
+        };
+        pgListings.push(newPg);
+        addPgForm.reset();
+        renderListings();
+    });
+
+    filterPrice.addEventListener('change', renderListings);
+    filterAvailability.addEventListener('change', renderListings);
+
+    renderListings();
+</script>
+</body></html>
